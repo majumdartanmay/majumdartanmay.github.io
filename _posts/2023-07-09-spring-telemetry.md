@@ -6,8 +6,6 @@ The intention of the article is to see whether a solution which remotely resolve
 
 I myself am not in a position to give a definite answer the question in title.  The agenda is to have a productive discussion and if there was a need for such a library, realize what would be the best option to go for.
 
----
-
 
 ### Problem Statement
 
@@ -35,19 +33,14 @@ Or, if the data storage format is standardized, people can contribute with their
 
 Basically, we can have our own inhouse, open-source, cloud native [cloud watch](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html). 
 
----
 
-
-### A **very** high level architecture.
+## A **very** high level architecture.
 
 ![Omnia.drawio.png](/assets/images/Omnia.drawio.png)
 
 The client will be sending API requests to your Spring application. Your spring application in turn, finishes processing the request and logs the API request using our Spring API logger. 
 
 The metadata might contain processing time, the response status code and other performance related metrics. 
-
-
----
 
 ### Concerns
 
@@ -60,8 +53,6 @@ There are some obvious concerns to a library like this.
 ### The Silver lining
 
 The above concerns are precisely why we need to have a granular configuration model. Users might not and perhaps should not log *****every***** API request that they get. But the library still should provide the ability to do so. Users can modulate their cost and performance by picking and choosing what they wish to monitor. 
-
----
 
 ### What can we use?
 
