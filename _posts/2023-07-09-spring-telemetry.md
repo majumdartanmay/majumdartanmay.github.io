@@ -1,9 +1,6 @@
 # Spring Library To Potentially Log and Store Every API request?
 
-Created: July 9, 2023 12:59 PM
-Tags: SystemDesigning
-
-# Disclaimer
+## Disclaimer
 
 The intention of the article is to see whether a solution which remotely resolves the problem statement exists or not. This article will also highlight the places which were looked at and will finally draw a conclusion based on the short lived and poor research that was done. 
 
@@ -11,13 +8,13 @@ I myself am not in a position to give a definite answer the question in title.  
 
 ---
 
-# Problem Statement
+## Problem Statement
 
-## Overview
+### Overview
 
 Create a library which gets coupled with your spring application and logs every API request that is being sent to it. This library will operate as a separate Spring instance, just like Spring Config Server or Spring Eureka Server.
 
-## Addition Features
+### Addition Features
 
 Although the overview covers the minimum requirement to what we want. But without these addition features, our problem will perhaps be reduced to a few lines on the [API interceptors](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/servlet/HandlerInterceptor.html) or filters . It would be a pretty bad solution, but its still a solution!
 
@@ -29,7 +26,7 @@ Here, we will highlight some features that are required to make such a library f
 4. Give user the ability to include, exclude different API metrics from logging. For eg: user should have to ability to not store the response or request payload. Maybe someone only wants to store the API response time etc.
 5. Encrypt specific API metrics. For eg: You don’t want the basic authentication headers to be stored as plain text.
 
-## The Possibilities!
+### The Possibilities!
 
 With the above features in order, we can perhaps link this data to  [Grafana](https://grafana.com/) or [Metabase](https://www.metabase.com/) for telemetry, alarms and tracking other metrics. 
 
@@ -39,9 +36,9 @@ Basically, we can have our own inhouse, open-source, cloud native [cloud watch](
 
 ---
 
-# A ****very**** high level architecture.
+## A **very** high level architecture.
 
-![Omnia.drawio.png](images/Omnia.drawio.png)
+![Omnia.drawio.png](/assets/images/Omnia.drawio.png)
 
 The client will be sending API requests to your Spring application. Your spring application in turn, finishes processing the request and logs the API request using our Spring API logger. 
 
