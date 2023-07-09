@@ -41,7 +41,7 @@ Basically, we can have our own inhouse, open-source, cloud native [cloud watch](
 
 # A ****very**** high level architecture.
 
-![Omnia.drawio.png](Spring%20Library%20To%20Potentially%20Log%20and%20Store%20Every%20%2084b6a3f783384e9dbaf83f4a3febe1c9/Omnia.drawio.png)
+![Omnia.drawio.png](images/Omnia.drawio.png)
 
 The client will be sending API requests to your Spring application. Your spring application in turn, finishes processing the request and logs the API request using our Spring API logger. 
 
