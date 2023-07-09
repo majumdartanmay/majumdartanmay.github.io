@@ -11,7 +11,26 @@ I myself am not in a position to give a definite answer the question in title.  
 
 #### Overview
 
-Create a library which gets coupled with your spring application and logs every API request that is being sent to it. This library will operate as a separate Spring instance, just like Spring Config Server or Spring Eureka Server.
+Create a library which gets coupled with your spring application and logs every API request that is being sent to it. This library will operate as a separate Spring instance, just like Spring Config Server or Spring Eureka Server.  I am hoping to get something as simple as this:
+
+
+```
+@EnableTracingServer
+public class MySpringApplication {
+    // Spring boiler plate
+}
+
+```
+
+Then we shall have our application.properties
+```
+tracing.server.property1 = value
+tracing.server.property2 = value
+tracing.server.property3 = value
+
+```
+
+Ideally, this is whether the developer's headache should end. (But most probably it won't)
 
 #### Addition Features
 
@@ -56,13 +75,11 @@ The above concerns are precisely why we need to have a granular configuration mo
 
 ### What can we use?
 
-#### OpenTelemetry
+#### OpenTelemetry and others
 
 There’s a [good open telemetry demo](https://www.baeldung.com/spring-boot-opentelemetry-setup) for what we want to do. This will provide a dashboard which displays relevant metrics for all your data.
 
 **Question**: Does OpenTelemetry get linked with a persistent database or everything is added onto memory?  
-**Answer**: Yes, it does. 
-  
-    
-Here is a look at their architechture, [which I got from there website.](https://opentelemetry.io/docs/)  
-![OpenTelemetry Architechture](https://opentelemetry.io/img/otel-diagram.svg)
+**Answer**: It seems there's [no straight forward way to do so](https://github.com/open-telemetry/opentelemetry-java-instrumentation/discussions/5573). The methods have been explained in the GitHub issue. However, you still ought to code your way out of this problem. I would also encourage you to look at [Promscale](https://github.com/timescale/promscale?ref=timescale.com#readme).  
+It seems that with this, we might just get what we want. However, we still need to manage multiple applications.
+
