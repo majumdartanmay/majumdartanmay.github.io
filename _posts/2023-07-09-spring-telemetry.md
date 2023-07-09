@@ -59,3 +59,10 @@ The above concerns are precisely why we need to have a granular configuration mo
 #### OpenTelemetry
 
 There’s a [good open telemetry demo](https://www.baeldung.com/spring-boot-opentelemetry-setup) for what we want to do. This will provide a dashboard which displays relevant metrics for all your data.
+
+**Question**: Does OpenTelemetry get linked with a persistent database or everything is added onto memory?  
+**Answer**: Yes, it does. 
+  
+    
+Here is a look at their architechture, [which I got from there website.](https://opentelemetry.io/docs/)  
+![OpenTelemetry Architechture](https://opentelemetry.io/img/otel-diagram.svg)
