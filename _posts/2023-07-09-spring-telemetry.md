@@ -48,7 +48,7 @@ Here, we will highlight some features that are required to make such a library f
 
 With the above features in order, we can perhaps link this data to  [Grafana](https://grafana.com/) or [Metabase](https://www.metabase.com/) for telemetry, alarms and tracking other metrics. 
 
-Or, if the data storage format is standardizedb like [Otel](https://opentelemetry.io/docs/), people can contribute with their own Grafana like applications for this. The possibilities are endless!
+Or, if the data storage format is standardized like [Otel](https://opentelemetry.io/docs/), people can contribute with their own Grafana like applications for this. The possibilities are endless!
 
 Basically, we can have our own inhouse, open-source, cloud native [cloud watch](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html). 
 
@@ -77,7 +77,7 @@ The above concerns are precisely why we need to have a granular configuration mo
 
 #### OpenTelemetry and others
 
-There’s a [good open telemetry demo with open telemetry and Jaeger](https://www.baeldung.com/spring-boot-opentelemetry-setup) for what we want to do. This will provide a dashboard which displays relevant metrics for all your data. Howeber, I didn't see a database linkage here.
+There’s a [good open telemetry demo with open telemetry and Jaeger](https://www.baeldung.com/spring-boot-opentelemetry-setup) for what we want to do. This will provide a dashboard which displays relevant metrics for all your data. However, I didn't see a database linkage here.
 
 **Question**: Does OpenTelemetry get linked with a persistent database or everything is added onto memory?  
 **Answer**: It seems there's [no straight forward way to do so](https://github.com/open-telemetry/opentelemetry-java-instrumentation/discussions/5573). The methods have been explained in the GitHub issue. However, you still ought to code your way out of this problem. I would also encourage you to look at [Promscale](https://github.com/timescale/promscale?ref=timescale.com#readme).  
